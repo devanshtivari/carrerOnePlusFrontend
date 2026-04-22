@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  /* High-end Neutral Palette */
+  --color-brand-bg: #050505;
+  --color-brand-surface: #0a0a0a;
+  --color-brand-border: #1a1a1a;
+  
+  --color-surface-100: #0f0f0f;
+  --color-surface-200: #161616;
+  --color-surface-300: #222222;
+  --color-surface-400: #333333;
+  --color-border-default: #2A2A2A;
+
+  /* Accents - No Purple */
+  --color-accent-primary: #10b981; /* Emerald */
+  --color-accent-secondary: #f59e0b; /* Amber */
+  --color-accent-critical: #ef4444; /* Red */
+
+  /* Geometry */
+  --radius-sharp: 2px;
+  --radius-pill: 9999px;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+:root {
+  --background: var(--color-brand-bg);
+  --foreground: #f0f0f0;
+}
+
+* {
+  border-color: var(--color-brand-border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Themed Scrollbar — applied to ALL scrollable elements */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2A2A2A #0a0a0a;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 0px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #2A2A2A;
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+/* Custom Utilities for Premium Feel */
+@layer utilities {
+  .glass-card {
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .animate-shake {
+    animation: shake 0.4s ease-in-out;
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
