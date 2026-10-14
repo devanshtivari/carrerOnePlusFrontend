@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LeetCode Clone | Engineering Excellence",
+  title: "Edtech Whitelabel | Engineering Excellence",
   description:
-    "A high-performance LeetCode clone built with Next.js and Tailwind CSS.",
+    "A high-performance edtech platform built with Next.js and Tailwind CSS.",
 };
 
 export default function RootLayout({
